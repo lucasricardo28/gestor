@@ -20,6 +20,10 @@ class Institutions extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['public_target_id','name','contact','address','number','complement','neighborhood','developed_projects','number_of_members','need'];
+
+    public function publicTarget(){
+        return $this->belongsTo(PublicTarget::class);
+    }
 
 }

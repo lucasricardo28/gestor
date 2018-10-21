@@ -22,4 +22,9 @@ class Community extends Model implements Transformable
      */
     protected $fillable = ['name','contact','email', 'address', 'number', 'complement', 'neighborhood','regional_id','occupation_area'];
 
+    public function regional()
+    {
+        return $this->belongsTo(Regional::class);
+    }
+
 }

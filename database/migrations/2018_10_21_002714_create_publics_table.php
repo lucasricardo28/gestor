@@ -15,7 +15,7 @@ class CreatePublicsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('publics', function(Blueprint $table) {
+		Schema::create('public_targets', function(Blueprint $table) {
             $table->increments('id');
             $table->string("name");
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreatePublicsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('publics');
+		Schema::drop('public_targets');
 	}
 }

@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="container">
                     <div class="row">
                         <div class="col align-self-start">
-
+                            <a href="{{route('principal')}}" class="btn btn-success btn-sm rounded-s"><i class="fa fa-plus icon"></i> INICIO </a>
                         </div>
                         <div class="col align-self-center">
 
@@ -37,15 +37,15 @@
                                     <td>{!! $community->contact !!}</td>
                                     <td>{!! $community->email !!}</td>
                                     <td>{!! $community->occupation_area !!}</td>
-                                    <td>{!! $community->regional_id !!}</td>
+                                    <td>{!! $community->regional->name !!}</td>
                                     <td>
-                                        <a class="btn btn-info" href="{!! route('communities.show', $community) !!}"><i class="fa fa-eye"></i> Ver Mais</a>
+                                        {{--<a class="btn btn-info" href="{!! route('communities.show', $community) !!}"><i class="fa fa-eye"></i> Ver Mais</a>--}}
                                         <a class="btn btn-warning" href="{!! route('communities.edit', $community) !!}"><i class="fa fa-edit"></i> Alterar</a>
                                     </td>
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="4">Nenhum registro foi encontrado!</td>
+                                    <td colspan="6">Nenhum registro foi encontrado!</td>
                                 </tr>
                                 @endforelse
                                 </thead>

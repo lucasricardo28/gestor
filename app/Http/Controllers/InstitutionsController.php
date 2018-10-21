@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\PublicTarget;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -51,6 +52,8 @@ class InstitutionsController extends Controller
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
         $institutions = $this->repository->all();
 
+        $publicTargets = PublicTarget::all()->pluck('name','id');
+
         if (request()->wantsJson()) {
 
             return response()->json([
@@ -58,7 +61,7 @@ class InstitutionsController extends Controller
             ]);
         }
 
-        return view('institutions.index', compact('institutions'));
+        return view('institutions.index', compact('institutions','publicTargets'));
     }
 
     /**
@@ -133,7 +136,9 @@ class InstitutionsController extends Controller
     {
         $institution = $this->repository->find($id);
 
-        return view('institutions.edit', compact('institution'));
+        $publicTargets = PublicTarget::all()->pluck('name','id');
+
+        return view('institutions.edit', compact('institution','publicTargets'));
     }
 
     /**
@@ -164,7 +169,7 @@ class InstitutionsController extends Controller
                 return response()->json($response);
             }
 
-            return redirect()->back()->with('message', $response['message']);
+            return redirect()->route('institutions.index')->with('message', $response['message']);
         } catch (ValidatorException $e) {
 
             if ($request->wantsJson()) {
