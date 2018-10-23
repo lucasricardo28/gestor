@@ -25,8 +25,6 @@ class CreateUsersTable extends Migration
             $table->string('imagepath')->nullable();
             $table->rememberToken();
             $table->timestamps();
-
-            $table->index([DB::raw('email(191)')]);
         });
     }
 
