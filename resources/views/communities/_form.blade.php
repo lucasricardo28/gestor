@@ -50,7 +50,7 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label>Bairro</label>
+                <label>Área de atuação</label>
                 {!! Form::text('occupation_area', null, ['class' => 'form-control', 'placeholder'=>'Digite o Área de Atuação ']) !!}
             </div>
         </div>

@@ -12,9 +12,28 @@ class RegionalTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         Regional::create([
             'name' => 'Regional I'
+        ]);
+
+        Regional::create([
+            'name' => 'Regional II'
+        ]);
+
+        Regional::create([
+            'name' => 'Regional III'
+        ]);
+
+        Regional::create([
+            'name' => 'Regional IV'
+        ]);
+
+        Regional::create([
+            'name' => 'Regional V'
+        ]);
+
+        Regional::create([
+            'name' => 'Regional VI'
         ]);
     }
 }

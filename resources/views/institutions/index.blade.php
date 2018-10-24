@@ -47,7 +47,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6">Nenhum registro foi encontrado!</td>
+                                    <td colspan="7">Nenhum registro foi encontrado!</td>
                                 </tr>
                                 @endforelse
                                 </thead>
